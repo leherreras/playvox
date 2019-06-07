@@ -1,8 +1,5 @@
 FROM python:3.7-stretch
 
-RUN apt-get update
-RUN apt-get -y upgrade
-
 RUN mkdir opt/playvox
 WORKDIR opt/playvox
 
