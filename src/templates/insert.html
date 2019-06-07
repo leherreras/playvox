@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insert</title>
+</head>
+<body>
+<form action="{{ url_for('UsersView:post') }}" method="post">
+    <p>
+        <input id="username" name="username" required="required" type="text" placeholder="Name" />
+        <label for="username" class="uname" >Your name</label>
+    </p>
+
+    <p>
+        <input id="lastname" name="lastname" required="required" type="text" placeholder="Lastname" />
+        <label for="lastname" class="uname" >Your last name</label>
+    </p>
+
+    <p>
+        <input id="old" name="old" required="required" type="number" placeholder="How old are you" />
+        <label for="old" class="uname" >How old are you</label>
+    </p>
+
+    <p>
+        <input id="gender" name="gender" required="required" type="text" placeholder="Gender" />
+        <label for="gender" class="uname" >Your gender</label>
+    </p>
+
+    <p>
+        <input id="email" name="email" required="required" type="email" placeholder="Email" />
+        <label for="email" class="uname" >Your email</label>
+    </p>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

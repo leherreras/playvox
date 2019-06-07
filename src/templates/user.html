@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+{% if 'user_id' in data %}
+    The user was create successfully
+    <br>
+    {{ data.user_id }}
+{% elif 'error' in data %}
+    {{ data.error }}
+{% else %}
+    <h1>User</h1>
+    {{ data.user.username }}
+    <br>
+    {{ data.user.lastname }}
+    <br>
+    {{ data.user.old }}
+    <br>
+    {{ data.user.gender }}
+    <br>
+    {{ data.user.email }}
+    <br>
+    <hr>
+    {% if data.user.notes==[] %}
+        There are not notes
+        <hr>
+    {% else %}
+        {% for note in data.user.notes %}
+            {{ note.note }}
+            <hr>
+        {% endfor %}
+    {% endif %}
+{% endif %}
+
+
+</body>
+</html>

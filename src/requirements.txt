@@ -1,0 +1,6 @@
+Flask
+pymongo
+git+https://github.com/leherreras/flask-negotiation.git
+pyyaml
+Flask-Classy
+Flask-Paginate

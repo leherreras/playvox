@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <hr>
+    {% for user in data.users %}
+
+        <a href="{{ url_for('UsersView:get', user_id=user._id) }}">{{ user.username }}</a>
+        <br>
+        {{ user._id }}
+        <br>
+        {{ user.lastname }}
+        <br>
+        {{ user.old }}
+        <br>
+        {{ user.gender }}
+        <br>
+        {{ user.email }}
+        <br>
+        <a href="{{ url_for('NotesView:insert', user_id=user._id) }}">Create note</a>
+        <hr>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+version: '3'
+services:
+  service:
+    container_name: playvox-service
+    build: .
+    volumes:
+      - ${PWD}/config/playvox:/opt/playvox/conf
+    ports:
+      - 5000:5000
+    depends_on:
+      - mongo
+    networks:
+      - bridge
+  mongo:
+    container_name: playvox-mongo
+    image: mongo:3.6
+    volumes:
+      - ${PWD}/config/mongo:/docker-entrypoint-initdb.d
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: playvox
+      MONGO_INITDB_ROOT_PASSWORD: playvox
+      MONGO_INITDB_DATABASE: playvox
+    ports:
+      - 27017:27017
+    networks:
+      - bridge
+
+networks:
+  bridge:
+    driver: bridge

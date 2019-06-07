@@ -1,0 +1,2 @@
+db.createCollection("<name>");
+db.createUser({ user: "<name>", pwd: "<pass>", roles: [ { role: "dbOwner", db: "<db_name>" } ] });

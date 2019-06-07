@@ -1,0 +1,6 @@
+MONGO:
+  <db-name>:
+    host: <host>
+    port: 27017
+    user: <user>
+    passwd: <password>
