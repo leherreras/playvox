@@ -4,7 +4,7 @@ services:
     container_name: playvox-service
     build: .
     volumes:
-      - ${PWD}/config/playvox:/opt/playvox/config
+      - ${PWD}/config/playvox:/opt/playvox/config/playvox
     ports:
       - 5000:5000
     depends_on:

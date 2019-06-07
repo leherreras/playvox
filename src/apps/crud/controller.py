@@ -24,7 +24,7 @@ def get_user(user_id:str):
 
 def save_user(username:str, lastname:str, old:int, gender:str, email:str):
     old_user = storage.users.collection.find_one({'email': email})
-    if '_id' in old_user:
+    if old_user:
         return {'error': 'duplicate user'}
     document = dict(
         username=username,
