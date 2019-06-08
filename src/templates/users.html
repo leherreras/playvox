@@ -22,6 +22,7 @@
         {{ user.email }}
         <br>
         <a href="{{ url_for('NotesView:insert', user_id=user._id) }}">Create note</a>
+        <a href="{{ url_for('UsersView:insert', user_id=user._id) }}">Update user</a>
         <hr>
     {% endfor %}
 </body>

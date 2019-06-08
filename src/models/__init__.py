@@ -18,4 +18,4 @@ class MongoBase:
             try:
                 self.collection.update({'_id': document['_id']}, document)
             except InvalidId:
-                pass
+                return

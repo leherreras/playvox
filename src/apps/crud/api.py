@@ -1,11 +1,13 @@
-from flask_classy import FlaskView, route
-from flask import request
-from flask_paginate import Pagination
 from flask import render_template
+from flask import request
+from flask_classy import FlaskView
+from flask_paginate import Pagination
+
 from common.negotiation import render
 from .controller import get_user_per_page, get_user, save_user, delete_user
 
 PER_PAGE = 15
+
 
 class UsersView(FlaskView):
     route_prefix = '/v1/'
@@ -24,7 +26,11 @@ class UsersView(FlaskView):
         return render(data, 'users.html', ctx=context)
 
     def insert(self):
-        return render_template('insert.html')
+        user_id = request.args.get('user_id')
+        if not user_id:
+            return render_template('insert.html')
+        data = get_user(user_id)
+        return render(data, 'insert.html', ctx=data)
 
     def destroy(self,user_id):
         """
